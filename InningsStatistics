@@ -1,0 +1,71 @@
+
+/*Assignment 2:
+As a developer, you are assigned to develop a module to generate innings statistics of a batsman. Assume the batsman has played 5 overs (30 balls). Generate random runs between 1 to 6 and calculate the below stats:
+1. Total runs scored.
+2. Number of 0s, 1s, 2s, 3s, 4s and 6s.
+3. Strike Rate (runs per ball).*/
+
+
+import java.util.*;
+
+public class InningsStatistics {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc=new Scanner(System.in);
+		int runs[]=new int[30];
+		
+		int i,total=0,zero=0,one=0,two=0,three=0,four=0,six=0;
+		System.out.println("Enter number of runs for each ball : ");
+		for(i=0;i<30;i++) {
+			runs[i]=sc.nextInt();
+		}
+		
+		for(i=0;i<30;i++) {
+			total += runs[i];
+
+			switch(runs[i]) {
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			}
+
+		}
+	
+		System.out.println("Total runs scored : "+ total);
+		System.out.println("Total 0's : "+ zero);
+		System.out.println("Total 1's : "+ one);
+		System.out.println("Total 2's : "+ two);
+		System.out.println("Total 3's : "+ three);
+		System.out.println("Total 4's : "+ four);
+		System.out.println("Total 6's : "+ six);
+		
+		
+		
+			float strike_rate = total/30;
+			System.out.println("Strike Rate : "+ String.format("%.2f",strike_rate));
+			
+	}
+}
