@@ -1,0 +1,228 @@
+/*Extend the assignment 3, which fetch details for last 5 innings and calculate the following:
+1. Average score of last 5 matches
+2. Total runs
+3. Number of 0s, 1s, 2s, 3s, 4s and 6s.
+4. Average Strike Rate (runs per ball).*/
+
+public class Five_Innings_Stats {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		int first_inning[]= {0,1,2,3,1,2,4,6,0,1,4,2,6,1,2,4,2,6,1,2};
+
+		int second_inning[]={1,1,4,2,0,1,0,4,2,0,1,2,3,1,2,4,0,6,1,2};
+		
+		int third_inning[]= {4,2,6,0,2,4,2,6,0,1,0,3,1,2,4,6,0,1,2,6};
+		
+		int fourth_inning[]={1,1,4,0,4,2,0,1,2,2,0,1,3,1,2,4,0,6,1,2};
+		
+		int fifth_inning[]= {1,1,4,0,1,2,0,1,2,3,1,2,4,0,3,1,2,4,0,6};
+		
+		int i,total_runs=0,zero=0,one=0,two=0,three=0,four=0,six=0,first_total=0,second_total=0,third_total=0,fourth_total=0,fifth_total=0;
+		
+		for(i=0;i<20;i++) {
+			
+			first_total= first_total+first_inning[i];
+		}
+		
+		
+		
+		for(i=0;i<20;i++) {
+			
+			second_total= second_total+second_inning[i];
+		}
+	
+		
+
+		for(i=0;i<20;i++) {
+	
+			third_total= third_total+third_inning[i];
+		}
+		
+		
+
+		for(i=0;i<20;i++) {
+	
+			fourth_total= fourth_total+fourth_inning[i];
+		}
+		
+		
+
+		for(i=0;i<20;i++) {
+	
+			fifth_total= fifth_total+fifth_inning[i];
+		}
+			
+		
+
+		total_runs= first_total+second_total+third_total+fourth_total+fifth_total;
+		
+		
+		
+		
+		for(i=0;i<20;i++) {
+			
+			switch(first_inning[i]) {  
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			}
+			
+			switch(second_inning[i]) {
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			
+			}
+			
+			switch(third_inning[i]) {
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			
+			}
+			
+			switch(fourth_inning[i]) {
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			
+			}
+			
+			switch(fifth_inning[i]) {
+			
+			case 0 : 
+				zero++;
+				break;
+				
+			case 1 : 
+				one++;
+				break;
+				
+			case 2 : 
+				two++;
+				break;
+				
+			case 3 : 
+				three++;
+				break;
+				
+			case 4 : 
+				four++;
+				break;
+				
+			case 6 : 
+				six++;
+				break;
+			
+			}
+		}
+		
+		float avg_score = total_runs/5;
+		
+	
+		float first_inning_strike_rate = first_total/20;
+		float second_inning_strike_rate = second_total/20;
+		float third_inning_strike_rate = third_total/20;
+		float fourth_inning_strike_rate = fourth_total/20;
+		float fifth_inning_strike_rate = fifth_total/20;
+		
+		float avg_strike_rate=(first_inning_strike_rate+second_inning_strike_rate+third_inning_strike_rate+fourth_inning_strike_rate+fifth_inning_strike_rate)/5;
+	
+		System.out.println("Average score of last five innings : "+ String.format("%.2f", avg_score));
+		System.out.println("Total runs scored : "+ total_runs);
+		System.out.println("Total 0's : "+ zero);
+		System.out.println("Total 1's : "+ one);
+		System.out.println("Total 2's : "+ two);
+		System.out.println("Total 3's : "+ three);
+		System.out.println("Total 4's : "+ four);
+		System.out.println("Total 6's : "+ six);
+		System.out.println("Average Strike Rate : "+ String.format("%.2f",avg_strike_rate));
+		}
+}
