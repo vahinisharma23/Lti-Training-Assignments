@@ -1,0 +1,40 @@
+/*You are assigned to develop a module to calculate the electricity bill based on below conditions:
+The standard price per unit is Rs. 1.20.
+• If number of units are less than 100 then standard price per unit will be applied.
+• If it is less than or equal to 300 units then Rs. 2 will be charged for number of units over and above 100 units.
+• If it is greater 300 units then Rs. 2 will charged for additional 200 units above 100 units and Rs. 3 will be charged for additional units above 300.*/
+
+
+
+import java.util.*;
+
+public class Electricity_Bill {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter number of units : ");
+		float units=sc.nextFloat();
+		
+		double  total_Electricity_Bill=0;
+	
+		if(units<100) {
+			
+			total_Electricity_Bill = (units * 1.20) ;
+			
+		}
+		
+		else if(units<=300) {
+			
+			total_Electricity_Bill =  (100 * 1.20) + ((units-100)*2) ;
+		}
+		
+		else if(units>300) {
+			
+			total_Electricity_Bill = (100 * 1.20) + (200 * 2) + ((units - 300)*3);
+		}
+	
+	System.out.println("Your Total Electricity Bill is : " + total_Electricity_Bill);
+	}
+
+}
